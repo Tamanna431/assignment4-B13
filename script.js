@@ -21,6 +21,8 @@ let reject = document.getElementById('head-reject')
 const allCard =document.getElementById('all-card')
 const allCards = allCard.children;
 let reduceJob=document.getElementById('Avail');
+let statusBtn = document.querySelector('.status')
+// console.log(statusBtn);
 
 // console.log(allCards);
  function headerCalculate(){
@@ -39,6 +41,7 @@ let reduceJob=document.getElementById('Avail');
     reduceJob.innerText=allCards.length +" jobs";
     inter.innerText=iCount;
     reject.innerText=rCount;
+
  }
   headerCalculate();
 //   card ar interview button event add
@@ -50,6 +53,11 @@ for(let i=0;i<cardInterview.length;i++)
         let si =e.target.parentElement.parentElement;
         si.classList.remove('REJECTED');
         si.classList.add('INTERVIEW');
+        statusBtn.innerText='INTERVIEW';
+        statusBtn.style.color='green';
+        statusBtn.style.border= ' 1px solid green';
+         statusBtn.style.backgroundColor = 'white';
+
         headerCalculate();
     
     });
@@ -63,6 +71,13 @@ for(let i=0; i<cardReject.length; i++)
         let ri =e.target.parentElement.parentElement;
         ri.classList.remove('INTERVIEW');
         ri.classList.add('REJECTED');
+        statusBtn.innerText='REJECTED';
+        statusBtn.style.color='red';
+        statusBtn.style.border = '1px solid red';
+         statusBtn.style.backgroundColor = 'white';
+
+
+
         headerCalculate();
     
     });
@@ -87,4 +102,32 @@ allBtn.addEventListener('click',function(){
         allCards[i].style.display='block';
     }
 });
-// const interFilter = document.getElementById('interview-btn');
+ const interFilter = document.getElementById('interview-btn');
+//  console.log(interFilter);
+ interFilter.addEventListener('click',function(){
+    for(let i=0;i <allCards.length; i++)
+    {
+        if(allCards[i].classList.contains('INTERVIEW'))
+        {
+            allCards[i].style.display='block';
+        }
+        else{
+            allCards[i].style.display='none';
+        }
+    }
+});
+// add reject filter
+const rejectFilter =document.getElementById('rejected-btn')
+ rejectFilter.addEventListener('click',function(){
+    for(let i=0;i <allCards.length; i++)
+    {
+        if(allCards[i].classList.contains('REJECTED'))
+        {
+            allCards[i].style.display='block';
+        }
+        else{
+            allCards[i].style.display='none';
+        }
+    }
+});
+
