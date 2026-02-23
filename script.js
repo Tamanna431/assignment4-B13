@@ -78,5 +78,13 @@ for(let i=0; i<delIcon.length; i++)
     
     });
 }
-    
-    
+// filter
+const allBtn=document.getElementById('all-btn')
+// console.log(allBtn)
+allBtn.addEventListener('click',function(){
+    for(let i=0;i<allCards.length;i++)
+    {
+        allCards[i].style.display='block';
+    }
+});
+// const interFilter = document.getElementById('interview-btn');
