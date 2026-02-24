@@ -21,7 +21,6 @@ let reject = document.getElementById('head-reject')
 const allCard =document.getElementById('all-card')
 const allCards = allCard.children;
 let reduceJob=document.getElementById('Avail');
-let statusBtn = document.querySelector('.status')
 // console.log(statusBtn);
 
 // console.log(allCards);
@@ -53,10 +52,12 @@ for(let i=0;i<cardInterview.length;i++)
         let si =e.target.parentElement.parentElement;
         si.classList.remove('REJECTED');
         si.classList.add('INTERVIEW');
+        let statusBtn = si.querySelector('.status')
+        if(statusBtn){
         statusBtn.innerText='INTERVIEW';
         statusBtn.style.color='green';
         statusBtn.style.border= ' 1px solid green';
-         statusBtn.style.backgroundColor = 'white';
+        statusBtn.style.backgroundColor = 'white';}
 
         headerCalculate();
     
@@ -71,6 +72,12 @@ for(let i=0; i<cardReject.length; i++)
         let ri =e.target.parentElement.parentElement;
         ri.classList.remove('INTERVIEW');
         ri.classList.add('REJECTED');
+        let statusBtn = ri.querySelector('.status')
+        if(statusBtn){
+        statusBtn.innerText='REJECTED';
+        statusBtn.style.color='red';
+        statusBtn.style.border= ' 1px solid red';
+        statusBtn.style.backgroundColor = 'white';}
     
         headerCalculate();
     
@@ -146,11 +153,11 @@ const rejectFilter =document.getElementById('rejected-btn')
         hide.classList,add('hidden');
     }
 });
-// add the interface of no Available job
-const hide =document.getElementById('check')
-console.log(hide);
-function hideShow(){
 
-}
+
+// add the interface of no Available job
+const hide =document.querySelector('.check');
+
+
 
 
