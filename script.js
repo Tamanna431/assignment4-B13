@@ -71,13 +71,7 @@ for(let i=0; i<cardReject.length; i++)
         let ri =e.target.parentElement.parentElement;
         ri.classList.remove('INTERVIEW');
         ri.classList.add('REJECTED');
-        statusBtn.innerText='REJECTED';
-        statusBtn.style.color='red';
-        statusBtn.style.border = '1px solid red';
-         statusBtn.style.backgroundColor = 'white';
-
-
-
+    
         headerCalculate();
     
     });
@@ -130,5 +124,11 @@ const rejectFilter =document.getElementById('rejected-btn')
         }
     }
 });
+// add the interface of no Available job
+const hide =document.getElementById('check')
+console.log(hide);
+function hideShow(){
+
+}
 
 
