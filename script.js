@@ -99,29 +99,51 @@ allBtn.addEventListener('click',function(){
  const interFilter = document.getElementById('interview-btn');
 //  console.log(interFilter);
  interFilter.addEventListener('click',function(){
+        // hide.remove('hidden');
+    // hide.classList.style='block'
+     let empty=0;
     for(let i=0;i <allCards.length; i++)
     {
         if(allCards[i].classList.contains('INTERVIEW'))
         {
             allCards[i].style.display='block';
+            empty++;
         }
         else{
             allCards[i].style.display='none';
         }
     }
+    if(empty===0)
+    {
+        hide.classList.remove('hidden');
+    }
+    else{
+        hide.classList,add('hidden');
+    }
+
+
 });
 // add reject filter
 const rejectFilter =document.getElementById('rejected-btn')
  rejectFilter.addEventListener('click',function(){
+     let empty=0
     for(let i=0;i <allCards.length; i++)
     {
         if(allCards[i].classList.contains('REJECTED'))
         {
             allCards[i].style.display='block';
+            empty++;
         }
         else{
             allCards[i].style.display='none';
         }
+    }
+    if(empty===0)
+    {
+        hide.classList.remove('hidden');
+    }
+    else{
+        hide.classList,add('hidden');
     }
 });
 // add the interface of no Available job
