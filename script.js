@@ -37,7 +37,7 @@ let reduceJob=document.getElementById('Avail');
         
     }
     total.innerText =allCards.length;
-    reduceJob.innerText=allCards.length +" jobs";
+    // reduceJob.innerText=allCards.length +" jobs";
     inter.innerText=iCount;
     reject.innerText=rCount;
 
@@ -46,8 +46,12 @@ let reduceJob=document.getElementById('Avail');
 //   card ar interview button event add
 let cardInterview = document.getElementsByClassName('card-btn-interview');
 // console.log(cardInterview[0].innerText);
+
+//   let j =8;
 for(let i=0;i<cardInterview.length;i++)
-{
+{   
+    // j--;
+
     cardInterview[i].addEventListener('click',function(e){
         let si =e.target.parentElement.parentElement;
         si.classList.remove('REJECTED');
@@ -58,11 +62,15 @@ for(let i=0;i<cardInterview.length;i++)
         statusBtn.style.color='green';
         statusBtn.style.border= ' 1px solid green';
         statusBtn.style.backgroundColor = 'white';}
-
+        i+=1;
+        reduceJob.innerText = i +" " + "of"+" " + allCards.length + " jobs";
+         
         headerCalculate();
     
     });
+
 }
+
 //   card ar reject button event add
 let cardReject = document.getElementsByClassName('card-btn-reject');
 // console.log(cardReject[0].innerText);
@@ -78,7 +86,8 @@ for(let i=0; i<cardReject.length; i++)
         statusBtn.style.color='red';
         statusBtn.style.border= ' 1px solid red';
         statusBtn.style.backgroundColor = 'white';}
-    
+         i+=1;
+        reduceJob.innerText = i +" " + "of"+" " + allCards.length + " jobs";
         headerCalculate();
     
     });
@@ -125,7 +134,7 @@ allBtn.addEventListener('click',function(){
         hide.classList.remove('hidden');
     }
     else{
-        hide.classList,add('hidden');
+        hide.classList.add('hidden');
     }
 
 
@@ -150,7 +159,7 @@ const rejectFilter =document.getElementById('rejected-btn')
         hide.classList.remove('hidden');
     }
     else{
-        hide.classList,add('hidden');
+        hide.classList.add('hidden');
     }
 });
 
